@@ -67,6 +67,8 @@ export function NewNoteCard({ onNoteCreated }: NewNoteCardProps) {
             const transcription = Array.from(event.results).reduce((text, result)=>{
                 return text.concat(result[0].transcript)
             },'')
+
+            setContent(transcription);
         }
 
         speechRecognition.onerror = (event)=>{
